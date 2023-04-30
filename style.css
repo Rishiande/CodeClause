@@ -1,0 +1,111 @@
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: skyblue url('https://i.imgur.com/kPGZf4n.png');
+}
+
+.wrapper{
+  user-select: none;
+}
+
+.wrapper .time{
+  height: 100px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+.wrapper .time span{
+  width: 100px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.time span.colon{
+  width: 10px;
+}
+
+.time span.ms-colon,
+.time span.millisecond{
+  color: #7D2Ae8;
+}
+
+.wrapper .buttons{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons button{
+  padding: 6px 16px;
+  outline: none;
+  border: none;
+  margin: 0 5px;
+  color: #fff;
+  background: #333;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.09);
+}
+
+.buttons button.active,
+.buttons button.stopActive{
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.clouds {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: url('https://i.imgur.com/kPGZf4n.png') repeat-x center;
+  animation: clouds 30s linear infinite;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.rain {
+  position: absolute;
+  top: -150%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: url('https://i.imgur.com/YlT1gE6.png') repeat center;
+  animation: rain 5s linear infinite;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+@keyframes clouds {
+  from { transform: translateX(-25%); }
+  to { transform: translateX(25%); }
+}
+
+@keyframes rain {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(180deg);
+    }
+  }
